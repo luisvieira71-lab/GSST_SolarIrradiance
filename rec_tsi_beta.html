@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Reconstruction of the Total Solar Irradiance</title>
+</head>
+
+<body>
+
+
+
+    <table id="container" cellspacing="4" cellpadding="0" width=800 border=0 bgcolor=#0099CC>
+        <tr bgcolor=#000000>
+            <td  colspan="3">
+                 <img src="http://lpc2e.cnrs-orleans.fr/www_img/bd01.jpg" alt="Mask" width="500" height="80"/>
+            </td>
+        </tr>
+        
+         <tr>
+            <td colspan="3">
+                 <table id="container" cellspacing="4" cellpadding="0" width=256 border=0 bgcolor=#0099CC>
+                    <tr>
+                        <td>
+                            <a href="http://lpc2e.cnrs-orleans.fr/~soteria/index.htm">  
+                            Home
+                            </a>
+                        </td>
+                         <td>
+                            <a href="http://lpc2e.cnrs-orleans.fr/~soteria/rec_tsi_beta.html">  
+                            TSI
+                            </a>
+                        </td>
+                          <td>
+                            <a href="http://lpc2e.cnrs-orleans.fr/~soteria/rec_xps_beta.html">  
+                            XPS
+                            </a>                         
+                          <td>
+                            <a href="http://lpc2e.cnrs-orleans.fr/~soteria/rec_fuv_beta.html">  
+                            FUV
+                            </a>
+                        </td>
+                          <td>
+                            <a href="http://lpc2e.cnrs-orleans.fr/~soteria/rec_muv_beta.html">  
+                            MUV
+                            </a>
+                        </td>                          
+                    </tr>
+                 </table>
+            </td>
+        </tr>
+        
+<tr>
+ <td colspan="3" align="center">        
+<h1> Reconstruction and Short-term Forecast of the Total Solar Irradiance</h1>
+ </td>
+</tr>
+
+<tr>
+    <td align="center" colspan="2">  
+    <img src="http://lpc2e.cnrs-orleans.fr/~soteria/figure_tsi_hi.png" alt="TSI" width="500" height="500"/>
+    </td>
+	
+	 <td width="500" valign="bottom">
+   Comparison between the TSI measured by TIM instrument on board of SORCE spacecraft (blue) 
+   and computed employing the neural network model (red line). For reference, the green line 
+   displays the <a href="http://lpc2e.cnrs-orleans.fr/~soteria/rec_tsi_out_ecliptic_beta.html"> TSI</a> computed employing a SATIRE-like model. The dashed vertical blue line presents 
+   the time instant of the last update. Data file: <a href="ftp://lpc2e.cnrs-orleans.fr/projects/soteria/pub/tsi_last.txt"> tsi_last.txt</a> 
+</td>
+</tr>
+ 
+
+<tr>
+    <td align="center" colspan="2">  
+    <img src="http://lpc2e.cnrs-orleans.fr/~soteria/figure_tsi_contributions_06.png" alt="TSI" width="500" height="800"/>
+    </td>
+
+	 <td width="500" valign="bottom">
+    	 Example of a 06-hour forecast training section of the neural network model for the total solar irradiance. 
+	 The upper panel shows the evolution of the contributions from classes II, III, and IV. The Panel (b) 
+	 presents the evolution of umbrae and penumbrae. The panel (c) shows the evolution of the feedback of the 
+	 first layer to the input of this layer. The panel (d) shows a comparison between the output of the model 
+	 (red curve) and the observations. For reference, the output of the same model, but with a linear transfer 
+	 function in the hidden layer is presented. The training and validation sets are marked in the panel (d).
+</td>
+</tr>
+
+
+</table>
+
+<script  type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22268027-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>
