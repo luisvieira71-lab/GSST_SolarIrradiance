@@ -74,10 +74,19 @@
     </td>
 	
 	 <td width="500" valign="bottom">
-   Comparison between the TSI measured by TIM instrument on board of SORCE spacecraft (blue) 
-   and computed employing the neural network model (red line). For reference, the green line 
-   displays the <a href="https://luisvieira71-lab.github.io/GSST_SolarIrradiance/rec_tsi_out_ecliptic_beta.html"> TSI</a> computed employing a SATIRE-like model. The dashed vertical blue line presents 
-   the time instant of the last update. Data file: <a href="ftp://lpc2e.cnrs-orleans.fr/projects/soteria/pub/tsi_last.txt"> tsi_last.txt</a> 
+   The proposed neural network is a deep residual feedforward network designed to predict
+   three physical parameters from a 7-dimensional input vector. The input first passes through a 
+   positional encoding layer (posEncND), which enriches the 
+   input representation with multi-frequency information, enabling the network to capture 
+   variations across multiple scales. A fully connected projection layer then maps
+   the encoded input into a 128-dimensional latent space. The core of the network 
+    consists of 4 identical residual blocks, each containing two fully connected layers of 
+   width 128 with tanh activation, along with a skip connection that adds the block's 
+output to its input — a mechanism that facilitates deep network training by 
+  mitigating the vanishing gradient problem. Finally, a linear fully connected layer
+  reduces the representation to the 3 output parameters, followed by a tanh
+activation layer that constrains the predictions to the interval (−1, +1), 
+ suitable for normalized outputs or physically bounded quantities with a defined sign.
 </td>
 </tr>
  
