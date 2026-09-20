@@ -23,6 +23,7 @@
     --s-craam: #0C7783;
     --s-inpe: #2A62AB;
     --s-univap: #A63F68;
+    --s-meetings: #6B6357;
 
     --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -47,6 +48,7 @@
       --s-craam: #46BECA;
       --s-inpe: #77ABEC;
       --s-univap: #E489AC;
+      --s-meetings: #B3A895;
     }
   }
 
@@ -67,6 +69,7 @@
     --s-craam: #46BECA;
     --s-inpe: #77ABEC;
     --s-univap: #E489AC;
+    --s-meetings: #B3A895;
   }
 
   * { box-sizing: border-box; }
@@ -473,7 +476,7 @@
     <div class="submit">
       <p>Send the following, and the entry goes up on this same page, at this same link:</p>
       <ul>
-        <li>series (KOSMOS / CRAAM / INPE / Univap)</li>
+        <li>series (KOSMOS / CRAAM / INPE / Univap / group meeting)</li>
         <li>date (YYYY-MM-DD)</li>
         <li>speaker and institution</li>
         <li>talk title</li>
@@ -489,7 +492,7 @@
 /* ============================================================
    SEMINAR RECORDS — add new entries to the top of this list.
    date:        "YYYY-MM-DD"
-   series:      "kosmos" | "craam" | "inpe" | "univap"
+   series:      "kosmos" | "craam" | "inpe" | "univap" | "meetings"
    seriesTitle: name of the series as announced (optional)
    youtube:     video id only, e.g. "rZHHxEcAPAQ" (optional)
    url:         any other recording/page link (optional)
@@ -498,8 +501,8 @@
 const SEMINARS = [
   {
     date: "2026-09-18",
-    series: "inpe",
-    seriesTitle: "SolarAI group meeting",
+    series: "meetings",
+    seriesTitle: "SolarAI",
     title: "SolarAI group meeting, 18 September 2026",
     youtube: "EPk7hXV5548",
     abstract: "Research updates from the group: machine learning for solar wind prediction, magnetosphere studies and cosmic ray analysis, the paper on Forbush decreases, magnetosheath datasets and self-organizing maps, and the hardware work on the solar disk calibration system and thermistor integration. Announcements on the China-Brazil Joint Laboratory for Space Weather meeting and on the SAGE event. Recording is private on YouTube, access on request."
@@ -555,7 +558,8 @@ const SERIES = {
   kosmos: { label: "KOSMOS",           color: "var(--s-kosmos)" },
   craam:  { label: "Mackenzie / CRAAM", color: "var(--s-craam)"  },
   inpe:   { label: "INPE",              color: "var(--s-inpe)"   },
-  univap: { label: "Univap",            color: "var(--s-univap)" }
+  univap: { label: "Univap",            color: "var(--s-univap)" },
+  meetings: { label: "Group meetings",  color: "var(--s-meetings)" }
 };
 
 const state = { series: "all", q: "" };
@@ -605,7 +609,7 @@ function renderCounts() {
   const series = new Set(SEMINARS.map(s => s.series)).size;
   const latest = SEMINARS.map(s => s.date).sort().slice(-1)[0];
   document.getElementById("counts").innerHTML = [
-    `<span><b>${SEMINARS.length}</b> seminar${SEMINARS.length === 1 ? "" : "s"} recorded</span>`,
+    `<span><b>${SEMINARS.length}</b> seminars and meetings</span>`,
     `<span><b>${withVideo}</b> with recording</span>`,
     `<span><b>${series}</b> series</span>`,
     latest ? `<span>last update <b>${esc(fmtDate(latest).long)}</b></span>` : ""
