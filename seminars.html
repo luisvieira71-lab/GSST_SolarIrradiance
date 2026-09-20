@@ -497,6 +497,14 @@
    ============================================================ */
 const SEMINARS = [
   {
+    date: "2026-09-18",
+    series: "inpe",
+    seriesTitle: "SolarAI group meeting",
+    title: "SolarAI group meeting, 18 September 2026",
+    youtube: "EPk7hXV5548",
+    abstract: "Research updates from the group: machine learning for solar wind prediction, magnetosphere studies and cosmic ray analysis, the paper on Forbush decreases, magnetosheath datasets and self-organizing maps, and the hardware work on the solar disk calibration system and thermistor integration. Announcements on the China-Brazil Joint Laboratory for Space Weather meeting and on the SAGE event. Recording is private on YouTube, access on request."
+  },
+  {
     date: "2026-09-17",
     series: "craam",
     seriesTitle: "Colóquios do CRAAM",
@@ -629,7 +637,7 @@ function entryHTML(s) {
           ${s.seriesTitle ? `<span class="series-title">${esc(s.seriesTitle)}</span>` : ""}
         </div>
         <h3>${esc(s.title)}</h3>
-        <p class="speaker">${esc(s.speaker)}${s.affiliation ? ` <span class="affil">· ${esc(s.affiliation)}</span>` : ""}</p>
+        ${s.speaker ? `<p class="speaker">${esc(s.speaker)}${s.affiliation ? ` <span class="affil">· ${esc(s.affiliation)}</span>` : ""}</p>` : ""}
         ${s.abstract ? `<p class="abstract">${esc(s.abstract)}</p>` : ""}
         <div class="links">${links}</div>
       </div>
